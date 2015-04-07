@@ -1,0 +1,19 @@
+{:site-title       "Mad Scientist Club"
+ :author           "The Mad Scientist"
+ :description      "The result of mad juice over-consumption."
+ :site-url         "https://www.mad-scientist.club/"
+ :post-root        "diary"
+ :tag-root         "labels"
+ :page-root        "experiments"
+ :blog-prefix      ""
+ :rss-name         "toxic-waste.xml"
+ :rss-filters      []
+ :recent-posts     3
+ :post-date-format "yyyy-MM-dd"
+ :sass-src         nil
+ :sass-dest        nil
+ :resources        ["css" "js" "404.html"]
+ :keep-files       [".git"]
+ :disqus?          false
+ :disqus-shortname ""
+ :ignored-files    [#"\.#.*" #".*\.swp$"]}
