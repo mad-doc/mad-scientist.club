@@ -4,9 +4,8 @@
     <meta charset="utf-8"/>
     <title>{{title}}{% block subtitle %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
-          type='text/css'>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/flatly/bootstrap.min.css"
+          rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
     {% style "css/screen.css" %}
@@ -26,9 +25,17 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li {% if home %} class="active" {% endif %}><a href="{{index-uri}}">Home</a></li>
+                <li {% if home %} class="active" {% endif %}>
+                    <a href="{{index-uri}}">
+                        Home
+                    </a>
+                </li>
                 <li
-                {% if archives %} class="active" {% endif %}><a href="{{archives-uri}}">Archives</a></li>
+                {% if archives %} class="active" {% endif %}>
+                    <a href="{{archives-uri}}">
+                        Archives
+                    </a>
+                </li>
                 {% for nav-page in navbar-pages %}
                 <li
                 {%ifequal page.uri nav-page.uri %} class="active" {% endifequal %}>
@@ -43,7 +50,6 @@
 
 <div class="container">
 
-
     <div class="row">
         <div class="col-lg-8">
             <div id="content">
@@ -57,9 +63,12 @@
                 {% if latest-posts|not-empty %}
                 <div id="recent">
                     <h3>Recent Posts</h3>
-                    <ul>
+                    <ul class="list-unstyled">
                         {% for post in latest-posts %}
-                        <li><a href="{{post.uri}}">{{post.title}}</a></li>
+                        <li>
+                            <a href="{{post.uri}}"
+                               class="label label-info label-lg">{{post.title}}</a>
+                        </li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -67,13 +76,14 @@
                 {% if tags|not-empty %}
                 <div id="tags">
                     <h3>Tags</h3>
-                    <ul>
+                    <ul class="list-inline">
                         {% for tag in tags %}
-                        <li><a href="{{tag.uri}}">{{tag.name}}</a></li>
+                        <li><a href="{{tag.uri}}" class="label label-default label-lg">{{tag.name}}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
                 {% endif %}
+                <hr>
                 <div id="birds">
                     <a class="twitter-timeline" data-dnt="true"
                        href="https://twitter.com/InsaneTinkerer"
@@ -84,10 +94,18 @@
             </div>
         </div>
     </div>
-    <footer>Copyright &copy; 2015
-        <a href="/experiments/about.html">The Mad Scientist</a>
-        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
 </div>
+
+<footer class="footer navbar-default">
+    <div class="container">
+        <p class="text-center">
+            Copyright &copy; 2015
+            <a href="/experiments/about.html">The Mad Scientist</a>;
+            powered by <a href="http://cryogenweb.org">Cryogen</a>
+        </p>
+    </div>
+</footer>
+
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 {% script "js/highlight.pack.js" %}
