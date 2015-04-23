@@ -49,7 +49,7 @@ It is pretty easy to see how the transformation works. We replace the
 `args`. In our imaginary tool, we could write this rule like this:
 
 ```clojure
-[(print :dest nil :values ?x nl true)
+[(print :dest nil :values ?x :nl true)
  (expr :value (call :func (name :id "print"
                                 :ctx (Load))
                     :args ?x
