@@ -31,6 +31,10 @@ body {
         font-size: 100%;
 }
 
+#recent .list-unstyled li {
+        margin-bottom: 1.25em;
+}
+
 #sidebar div h3 {
         margin-bottom: 0.6em;
 }
