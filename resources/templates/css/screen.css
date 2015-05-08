@@ -31,7 +31,7 @@ body {
         font-size: 100%;
 }
 
-#recent .list-unstyled li {
+#recent .list-unstyled li, #tags .list-inline li {
         margin-bottom: 1.25em;
 }
 
